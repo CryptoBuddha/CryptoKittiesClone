@@ -1,0 +1,124 @@
+.dog {
+	margin: 0 auto;
+	margin-top: 25px;
+	width: 200px;
+}
+#body {
+	background-color: #e9cc92;
+	width: 100px;
+	height: 175px;
+	border-radius: 50% 50% 15% 15%;
+}
+
+#inner_body {
+	background-color: #f1e1bf;
+	width: 90px;
+	height: 150px;
+	border-radius: 50% 50% 15% 15%;
+	position: relative;
+	top: 15px;
+	left: 7.5px;
+}
+
+#head {
+	background-color: #e9cc92;
+	width: 100px;
+	height: 100px;
+	border-radius: 	25% 25% 50% 50%;
+	position: relative;
+	top: 20px;
+}
+
+#eyes {
+	position:relative;
+	top: 15px;
+	display: flex;
+}
+
+.eye {
+	background-color: #000;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	margin: 12.5px;
+	position: relative;
+}
+
+.inner_eyes {
+	background-color: #FFF;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+
+.pupils {
+	background-color: #000;
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+}
+
+#nose {
+	background-color: #000;
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+	position: relative;
+	left: 45px;
+}
+
+#mouth {
+	background-color: #000;
+	border-radius: 50%;
+	width: 45px;
+	height: 10px;
+	position: relative;
+	left: 27.5px;
+	top: 7.5px;
+}
+
+*/
+.ears {
+	position: relative;/*
+	display: flex;*/
+}
+
+.ear {
+	border-radius: 90% 0 90% 0;
+	background-color: #e9cc92;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: -25px;/*
+	margin: 0px 30px 0px 30px;*/
+}
+
+.left_ear {
+	transform: scale(1,-1);
+	left: -30px;
+}
+
+.right_ear {
+	left: 80px;
+}
+
+.inner_ear {
+	border-radius: 90% 0 90% 0;
+	background-color:  #f1e1bf;
+	height: 45px;
+	width: 45px;
+	/*position: absolute;
+	top: -50px;*//*
+	margin: 0px 30px 0px 30px;*/
+}
+
+.leg {
+	background-color: #e9cc92;
+	width: 100px;
+	height: 5px;
+	position: absolute;
+	z-index: 1;
+}
