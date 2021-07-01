@@ -89,7 +89,15 @@ $('#earcolor').change(()=>{
     earColor(colors[colorVal],colorVal)
 })
 
+//Change eye position
+
 $("#eyePosition").change(()=> {
-	var shape = parseInt($("#eyePosition").val())
-	eyeVariation(shape)
+	var position = parseInt($("#eyePosition").val())
+	eyeVariation(position)
+})
+
+
+$("#earShape").change(()=>{
+	var shape = parseInt($("#earShape").val())
+	earVariation(shape)
 })

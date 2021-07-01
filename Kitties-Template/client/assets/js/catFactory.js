@@ -63,6 +63,29 @@ function eyeVariation(num) {
     }
 }
 
+function earVariation(num) {
+
+    $('#dnaearshape').html(num)
+    switch (num) {
+        case 1:
+            //normalEars()
+            $('#eyePositionName').html('Basic')
+            break
+        case 2:
+            $(".ear").removeClass("ear left_ear right_ear")
+			$(".inner_ear").removeClass("inner_ear")
+			$(".ear")addClass("ear1")
+            $('#eyePositionName').html('Left Downwards')
+			//earsType1()
+            break
+        case 3:
+            //normalEars()
+            $('#eyePositionName').html('Right Upwards')
+			//earsType2()
+            break
+    }
+}
+
 function decorationVariation(num) {
     $('#dnadecoration').html(num)
     switch (num) {
@@ -73,6 +96,8 @@ function decorationVariation(num) {
     }
 }
 
+//functions that modify the eyes
+
 async function normalEyes() {
     await $('.inner_eyes').css('border', 'none')
 }
@@ -82,6 +107,20 @@ function eyesType1() {
 }
 
 function eyesType2() {
+	$(".inner_eyes").css({"border-left": "5px solid", "border-color": "transparent"})
+}
+
+//functions that modify the ears
+
+async function normalEars() {
+    await $('.inner_eyes').css('border', 'none')
+}
+
+function earsType1() {
+	$(".inner_eyes").css({"border-top": "5px solid", "border-color": "transparent"})
+}
+
+function earsType2() {
 	$(".inner_eyes").css({"border-left": "5px solid", "border-color": "transparent"})
 }
 
