@@ -82,8 +82,8 @@
 
 */
 .ears {
-	position: relative;/*
-	display: flex;*/
+	position: relative;
+	display: flex;
 }
 
 .ear {
@@ -116,15 +116,70 @@
 }
 
 .ear1 {
-	width: 10px;
-	height: 10px;
-	background-color: red;
+	width: 45px;
+	height: 45px;
 	border-radius: 50%;
+	position: absolute;
+	top: -10px;
+}
+
+.leftear1 {
+	left: -10px;
+	top: -30px;
+}
+
+.rightear1 {
+	right: -10px;
+	top: -30px;
+}
+
+.innerear1 {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	position: absolute;
+	top: 4px;
+	left: 2px;
+	background-color: #f1e1bf;
+}
+
+.ear2 {
+   position: absolute;
+    top: -8px;
+    width: 50px;
+    height: 50px;
+    border: 5px solid  transparent;
+    border-radius: 90% 0 90% 0;
+    background: #ffcc80;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftear2 {
+    transform: scale(-1, 1) rotate(170deg);
+    left: -14px;
+}
+
+.rightear2 { 
+	transform: rotate(170deg);
+    right: -14px;
+}
+
+.innerear2 {
+    width:  33px;
+    height: 33px;
+    border-radius: 90% 0 90% 0;
+	position: absolute;
+	top: 4px;
+	left: 2px;
+	background-color: #f1e1bf;
+	z-index: -3;
 }
 
 .leg {
 	background-color: #e9cc92;
-	width: 100px;
+	width: 40px;
 	height: 5px;
 	position: absolute;
 	z-index: 1;

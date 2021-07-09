@@ -8,7 +8,7 @@ var defaultDNA = {
     "earColor" : 10,
     //Cattributes
     "eyePosition" : 1,
-    "decorationPattern" : 1,
+    "earShape" : 1,
     "decorationMidcolor" : 13,
     "decorationSidescolor" : 13,
     "animation" :  1,
@@ -23,7 +23,7 @@ $( document ).ready(function() {
   $('#dnaears').html(defaultDNA.earsColor);
     
    $('#dnashape').html(defaultDNA.eyePosition)
-   $('#dnadecoration').html(defaultDNA.decorationPattern)
+   $('#dnaearshape').html(defaultDNA.earShape)
    $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
    $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
    $('#dnaanimation').html(defaultDNA.animation)
@@ -39,7 +39,7 @@ function getDna(){
     dna += $('#dnaeyes').html()
     dna += $('#dnaears').html()
     dna += $('#dnashape').html()
-    dna += $('#dnadecoration').html()
+    dna += $('#dnaearshape').html()
     dna += $('#dnadecorationMid').html()
     dna += $('#dnadecorationSides').html()
     dna += $('#dnaanimation').html()
@@ -63,6 +63,9 @@ function renderCat(dna){
 	
 	eyeVariation(dna.eyePosition);
 	$("#eyePosition").val(dna.eyePosition);
+	
+	earVariation(dna.earShape);
+	$("#earShape").val(dna.earShape);
 }
 
 // Changing cat colors

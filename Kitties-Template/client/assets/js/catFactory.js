@@ -33,7 +33,7 @@ function eyeColor(color,code) {
 }
 
 function earColor(color,code) {
-    $('.ear').css('background', '#' + color)  //This changes the color of the cat
+    $('.ear, .ear1, .ear2').css('background', '#' + color)  //This changes the color of the cat
     $('#earcode').html('code: '+code) //This updates text of the badge next to the slider
     $('#dnaears').html(code) //This updates the body color part of the DNA that is displayed below the cat
 }
@@ -68,20 +68,17 @@ function earVariation(num) {
     $('#dnaearshape').html(num)
     switch (num) {
         case 1:
-            //normalEars()
-            $('#eyePositionName').html('Basic')
+            normalEars()
+            $('#earShapeName').html('Long')
             break
         case 2:
-            $(".ear").removeClass("ear left_ear right_ear")
-			$(".inner_ear").removeClass("inner_ear")
-			$(".ear")addClass("ear1")
-            $('#eyePositionName').html('Left Downwards')
-			//earsType1()
-            break
+			earsType1()
+            $('#earShapeName').html('Small and Round')
+			break
         case 3:
             //normalEars()
-            $('#eyePositionName').html('Right Upwards')
-			//earsType2()
+            $('#earShapeName').html('Small and Pointy')
+			earsType2()
             break
     }
 }
@@ -112,16 +109,64 @@ function eyesType2() {
 
 //functions that modify the ears
 
-async function normalEars() {
-    await $('.inner_eyes').css('border', 'none')
+function normalEars() {
+	removeEar1()
+	removeEar2()
+	addNormalEars()
 }
 
 function earsType1() {
-	$(".inner_eyes").css({"border-top": "5px solid", "border-color": "transparent"})
+	removeNormalEar()
+	removeEar2()
+	addEar1()	
 }
 
 function earsType2() {
-	$(".inner_eyes").css({"border-left": "5px solid", "border-color": "transparent"})
+	removeNormalEar()
+	removeEar1()
+	addEar2()
+}
+
+function addNormalEars() {
+    $(".earSelector").addClass("ear");
+	$(".leftEarSelector").addClass("left_ear");
+	$(".rightEarSelector").addClass("right_ear");
+	$(".innerEarSelector").addClass("inner_ear");
+}
+
+function removeEar1() {
+	$(".earSelector").removeClass("ear1")
+	$(".leftEarSelector").removeClass("leftear1")
+	$(".rightEarSelector").removeClass("rightear1")
+	$(".innerEarSelector").removeClass("innerear1")	
+}
+
+function removeEar2() {
+	$(".earSelector").removeClass("ear2")
+	$(".leftEarSelector").removeClass("leftear2")
+	$(".rightEarSelector").removeClass("rightear2")
+	$(".innerEarSelector").removeClass("innerear2")	
+}
+
+function addEar1() {
+	$(".earSelector").addClass("ear1")
+	$(".leftEarSelector").addClass("leftear1")
+	$(".rightEarSelector").addClass("rightear1")
+	$(".innerEarSelector").addClass("innerear1")	
+}
+
+function removeNormalEar() {
+	$(".earSelector").removeClass("ear")
+	$(".earSelector").removeClass("inner_ear")
+	$(".earSelector").removeClass("left_ear")
+	$(".earSelector").removeClass("right_ear")
+}
+
+function addEar2() {
+	$(".earSelector").addClass("ear2")
+	$(".innerEarSelector").addClass("innerear2")
+	$(".leftEarSelector").addClass("leftear2")
+	$(".rightEarSelector").addClass("rightear2")
 }
 
 async function normaldecoration() {
