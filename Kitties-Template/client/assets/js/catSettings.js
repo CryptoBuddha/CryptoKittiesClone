@@ -69,6 +69,9 @@ function renderCat(dna){
 	
 	legVariation(dna.legShape);
 	$("#legShape").val(dna.legShape);
+	
+	animationVariation(dna.animation);
+	$("#animation").val(dna.animation);
 }
 
 // Changing cat colors
@@ -111,4 +114,10 @@ $("#earShape").change(()=>{
 $("#legShape").change(()=>{
 	var shape = parseInt($("#legShape").val())
 	legVariation(shape)
+})
+
+//Change animation
+$("#animation").change(()=>{
+	var animationVal = parseInt($("#animation").val())
+	animation(animationVal)
 })

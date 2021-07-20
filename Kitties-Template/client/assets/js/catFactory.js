@@ -112,6 +112,22 @@ function decorationVariation(num) {
     }
 }
 
+function animationVariation(num) {
+	$("#dnaanimation").html(num);
+	switch (num) {
+		case 1:
+			resetAnimation();
+			break;
+		case 2:
+			animationType1();
+			break;
+		case 3:
+			animationType2();
+			break;
+	}
+	
+}
+
 //functions that modify the eyes
 
 async function normalEyes() {
@@ -269,4 +285,20 @@ async function normaldecoration() {
     $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
     $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
 }
+
+function animationType1() {
+	resetAnimation();
+	$("#head").addClass("movingHead");
+}
+
+function animationType2() {
+	resetAnimation();
+	$(".ears").addClass("movingEars");
+}
+
+function resetAnimation() {
+	$("#head").removeClass("movingHead");
+	$(".ears").removeClass("movingEars");
+}
+
 	
