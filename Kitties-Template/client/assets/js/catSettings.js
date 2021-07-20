@@ -9,7 +9,7 @@ var defaultDNA = {
     //Cattributes
     "eyePosition" : 1,
     "earShape" : 1,
-    "decorationMidcolor" : 13,
+    "legShape" : 1,
     "decorationSidescolor" : 13,
     "animation" :  1,
     "lastNum" :  1
@@ -24,7 +24,7 @@ $( document ).ready(function() {
     
    $('#dnashape').html(defaultDNA.eyePosition)
    $('#dnaearshape').html(defaultDNA.earShape)
-   $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
+   $('#dnalegshape').html(defaultDNA.legShape)
    $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
    $('#dnaanimation').html(defaultDNA.animation)
    $('#dnaspecial').html(defaultDNA.lastNum)
@@ -66,6 +66,9 @@ function renderCat(dna){
 	
 	earVariation(dna.earShape);
 	$("#earShape").val(dna.earShape);
+	
+	legVariation(dna.legShape);
+	$("#legShape").val(dna.legShape);
 }
 
 // Changing cat colors
@@ -93,14 +96,19 @@ $('#earcolor').change(()=>{
 })
 
 //Change eye position
-
 $("#eyePosition").change(()=> {
 	var position = parseInt($("#eyePosition").val())
 	eyeVariation(position)
 })
 
-
+//Change ear shape
 $("#earShape").change(()=>{
 	var shape = parseInt($("#earShape").val())
 	earVariation(shape)
+})
+
+//Change leg shape
+$("#legShape").change(()=>{
+	var shape = parseInt($("#legShape").val())
+	legVariation(shape)
 })
