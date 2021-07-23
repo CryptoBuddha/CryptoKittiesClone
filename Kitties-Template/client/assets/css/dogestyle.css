@@ -8,6 +8,7 @@
 	width: 115px;
 	height: 120px;
 	border-radius: 50% 35% 15% 15%;
+	position: relative;
 }
 
 #inner_body {
@@ -18,6 +19,7 @@
 	position: relative;
 	top: 15px;
 	left: 7.5px;
+	z-index: 1;
 }
 
 #head {
@@ -251,19 +253,44 @@
 	top: 70px;
 }
 
+.leg2 {
+	position: relative;
+	left: 0px;
+	top: 5px;
+}
+
+
 .paw2 {
 	background-color: #f1e1bf;
 	width: 30px;
 	height: 30px;
 	border-radius: 90% 90% 20% 20%;
-	position: absolute;
-	top: 285px;
+	position: absolute;/*
+	top: 285px;*/
 }
 
 .leftpaw2 {
- left: 125px;
+ left: 25px;
 }
 
 .rightpaw2 {
-	left: 170px;
+	left: 70px;
+}
+
+#tail {
+	background-color: #e9cc92;
+	width: 20px;
+	height: 90px;
+	position: absolute;
+	top: 20px;
+	left: -15px;
+	border-radius: 70%;
+	transform: rotate(-24deg);
+	z-index: 0;
+}
+
+.buttonscolumn {
+	margin: 0 auto;
+	text-align: center;/*
+	border: 1px solid red;*/
 }

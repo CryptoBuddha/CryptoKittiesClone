@@ -14,8 +14,12 @@ function genColors(){
     return colors
 }
 
+/***********************************************
+	functions that set colors
+***********************************************/
+
 function headColor(color,code) {
-    $('#head, #body, .leg').css('background', '#' + color)  //This changes the color of the cat
+    $('#head, #body, .leg, #tail').css('background', '#' + color)  //This changes the color of the cat
     $('#headcode').html('code: '+code) //This updates text of the badge next to the slider
     $('#dnabody').html(code) //This updates the body color part of the DNA that is displayed below the cat
 }
@@ -38,10 +42,8 @@ function earColor(color,code) {
     $('#dnaears').html(code) //This updates the body color part of the DNA that is displayed below the cat
 }
 
+// Sets eye variations
 
-//###################################################
-//Functions below will be used later on in the project
-//###################################################
 function eyeVariation(num) {
 
     $('#dnashape').html(num)
@@ -63,6 +65,8 @@ function eyeVariation(num) {
     }
 }
 
+// Sets ear variations
+
 function earVariation(num) {
 
     $('#dnaearshape').html(num)
@@ -83,6 +87,8 @@ function earVariation(num) {
     }
 }
 
+// Sets leg variations
+
 function legVariation(num) {
 
     $('#dnalegshape').html(num)
@@ -102,33 +108,36 @@ function legVariation(num) {
     }
 }
 
-function decorationVariation(num) {
-    $('#dnadecoration').html(num)
-    switch (num) {
-        case 1:
-            $('#decorationName').html('Basic')
-            normaldecoration()
-            break
-    }
-}
+// Sets animation variations
 
 function animationVariation(num) {
 	$("#dnaanimation").html(num);
 	switch (num) {
 		case 1:
 			resetAnimation();
+			$("#animationName").html("No animation");
 			break;
 		case 2:
+			$("#animationName").html("Moving Head");
 			animationType1();
 			break;
 		case 3:
+			$("#animationName").html("Twitching Ears");
 			animationType2();
+			break;
+		case 4:
+			$("#animationName").html("Moving Tail");
+			animationType3();
 			break;
 	}
 	
 }
 
-//functions that modify the eyes
+/***********************************************
+	functions that modify the eyes
+***********************************************/
+
+
 
 async function normalEyes() {
     await $('.inner_eyes').css('border', 'none')
@@ -142,7 +151,9 @@ function eyesType2() {
 	$(".inner_eyes").css({"border-left": "5px solid", "border-color": "transparent"})
 }
 
-//functions that modify the ears
+/***********************************************
+	functions that modify the ears
+***********************************************/
 
 function normalEars() {
 	removeEar1()
@@ -204,7 +215,10 @@ function addEar2() {
 	$(".rightEarSelector").addClass("rightear2")
 }
 
-//functions that modify the legs
+
+/***********************************************
+	functions that modify the legs
+***********************************************/
 
 function normalLegs() {
 	removeLegs1()
@@ -278,13 +292,10 @@ function addLegs2() {
 	$(".rightPawSelector").addClass("rightPaw2");
 }
 
-async function normaldecoration() {
-    //Remove all style from other decorations
-    //In this way we can also use normalDecoration() to reset the decoration style
-    $('.cat__head-dots').css({ "transform": "rotate(0deg)", "height": "48px", "width": "14px", "top": "1px", "border-radius": "0 0 50% 50%" })
-    $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
-    $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
-}
+
+/***********************************************
+	animation functions
+***********************************************/
 
 function animationType1() {
 	resetAnimation();
@@ -296,9 +307,15 @@ function animationType2() {
 	$(".ears").addClass("movingEars");
 }
 
+function animationType3() {
+	resetAnimation();
+	$("#tail").addClass("movingTail");
+}
+
 function resetAnimation() {
 	$("#head").removeClass("movingHead");
 	$(".ears").removeClass("movingEars");
+	$("#tail").removeClass("movingTail");
 }
 
 	

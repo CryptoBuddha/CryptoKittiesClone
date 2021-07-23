@@ -17,22 +17,22 @@
   <link rel="stylesheet" href="assets/css/animations.css">
 </head>
   <body>
-    <div class="container p-5" style="margin-top: 12vh;margin-bottom: 10vh;">
+    <div class="container p-5 mt-1" style="margin-bottom: 10vh;">
         <div align="center">
         <h1 class="c-white">Kitties-Factory</h1>
         <p class="c-white">Create your custom Kitty</p>
-    </div>
+    	</div>
         <div class="row">
             <div class="col-lg-4 catBox m-2 light-b-shadow">
                 <div class="dog">
-			<div id="head">
-				<div class="ears">
-					<div class="earSelector leftEarSelector ear left_ear">
-						<div class="innerEarSelector inner_ear"></div>
-					</div>
-					<div class="earSelector rightEarSelector ear right_ear">
-						<div class="innerEarSelector inner_ear"></div>
-					</div>
+				<div id="head">
+					<div class="ears">
+						<div class="earSelector leftEarSelector ear left_ear">
+							<div class="innerEarSelector inner_ear"></div>
+						</div>
+						<div class="earSelector rightEarSelector ear right_ear">
+							<div class="innerEarSelector inner_ear"></div>
+						</div>
 				</div>
 				<div id="eyes">
 					<div class="eye">
@@ -59,7 +59,9 @@
 						<div class="pawSelector rightPawSelector paw right_paw"></div>
 					</div>
 				</div>
+				<div id="tail"></div>
 			</div>
+
 		</div>
                 <br>
                 <div class="dnaDiv" id="catDNA">
@@ -82,9 +84,23 @@
                 </div>
             </div>
             <div class="col-lg-7 cattributes m-2 light-b-shadow">
+				<ul class="nav nav-tabs mb-5" role="tablist">
+				  <li class="nav-item" role="presentation">
+					<a class="nav-link active" id="doge-tab" data-toggle="tab" role="tab" href="#doge" aria-controls="doge" aria-selected="true">Doge Colors</a>
+				  </li>
+				  <li class="nav-item" role="presentation">
+					<a class="nav-link"  id="doge-attributes" data-toggle="tab" role="tab" href="#dogeAttr"  aria-controls="dogeAttr" aria-selected="false">Doge Attributes</a>
+				  </li>
+				</ul>
+				
+				
+				<div class="tab-content" id="myTabContent">
 
 			<!-- Cat colors -->
-			<div id="catColors">
+			
+				<div class="tab-pane fade show active" id="doge" role="tabpanel">
+				
+					<div id="catColors">
                 <div class="form-group">
                     <label for="formControlRange"><b>Head and Body Color</b><span class="badge badge-dark ml-2" id="headcode"></span></label>
                     <input type="range" min="10" max="98" class="form-control-range" id="bodycolor">
@@ -105,28 +121,36 @@
                     <input type="range" min="10" max="98" class="form-control-range" id="earcolor">
                 </div>
 				
-				<div class="form-group">
-                    <label for="formControlRangeEyeShape"><b>Eye Position</b><span class="badge badge-dark ml-2" id="eyePositionName"></span></label>
-                    <input type="range" min="1" max="3" class="form-control-range" id="eyePosition">
-                </div>
+			</div>
 				
-				<div class="form-group">
-                    <label for="formControlRangeEarShape"><b>Ear Shape</b><span class="badge badge-dark ml-2" id="earShapeName"></span></label>
-                    <input type="range" min="1" max="3" class="form-control-range" id="earShape">
-                </div>
-				
-				<div class="form-group">
-                    <label for="formControlRangeEarShape"><b>Leg Shape</b><span class="badge badge-dark ml-2" id="legShapeName"></span></label>
-                    <input type="range" min="1" max="3" class="form-control-range" id="legShape">
-                </div>
-				
-				<div class="form-group">
-                    <label for="formControlAnimations"><b>Animations</b><span class="badge badge-dark ml-2" id="animationName"></span></label>
-                    <input type="range" min="1" max="3" class="form-control-range" id="animation">
-                </div>
-            </div>
+				</div>
+			
+			
+				<div class="tab-pane fade" id="dogeAttr" role="tabpanel">
+	
+					<div id="dogeAttributes">	
+						<div class="form-group">
+							<label for="formControlRangeEyeShape"><b>Eye Position</b><span class="badge badge-dark ml-2" id="eyePositionName"></span></label>
+							<input type="range" min="1" max="3" class="form-control-range" id="eyePosition">
+						</div>
 
-            </div>
+						<div class="form-group">
+							<label for="formControlRangeEarShape"><b>Ear Shape</b><span class="badge badge-dark ml-2" id="earShapeName"></span></label>
+							<input type="range" min="1" max="3" class="form-control-range" id="earShape">
+						</div>
+
+						<div class="form-group">
+							<label for="formControlRangeEarShape"><b>Leg Shape</b><span class="badge badge-dark ml-2" id="legShapeName"></span></label>
+							<input type="range" min="1" max="3" class="form-control-range" id="legShape">
+						</div>
+
+						<div class="form-group">
+							<label for="formControlAnimations"><b>Animations</b><span class="badge badge-dark ml-2" id="animationName"></span></label>
+							<input type="range" min="1" max="4" class="form-control-range" id="animation">
+						</div>
+					</div>
+	            
+				</div>
 
             </div>
             <br>
@@ -135,7 +159,17 @@
 
 
 
-    </div>
+    		</div>
+		
+		<div class="row">
+			<div class="col-lg-4 buttonscolumn m-2 mt-2"></div>
+			  <div class="col-lg-7 buttonscolumn m-2 mt-2">
+				  <button type="button" id="getRandom">Get Random</button>
+				  <button type="button" id="getDefault">Get Default</button>
+				  <button type="button" id="createKitty">Create Kitty</button>
+			</div>
+		</div>
+	  </div>
     <footer align="left">
         <p>Ivan on Tech Academy Bootcamp July 2020</p>
     </footer>

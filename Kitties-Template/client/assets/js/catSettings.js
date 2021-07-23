@@ -119,5 +119,47 @@ $("#legShape").change(()=>{
 //Change animation
 $("#animation").change(()=>{
 	var animationVal = parseInt($("#animation").val())
-	animation(animationVal)
+	animationVariation(animationVal);
+})
+
+
+// Generate a random kitty on clicking the "Get Random" button
+$("#getRandom").click(()=>{
+	randomHeadColor = Math.floor(Math.random() * 89) + 10;
+	randomMouthColor = Math.floor(Math.random() * 89) + 10;
+	randomEyeColor = Math.floor(Math.random() * 89) + 10;
+	randomEarColor = Math.floor(Math.random() * 89) + 10;
+	randomEyePosition = Math.floor(Math.random() * 4) + 1;
+	randomEarShape = Math.floor(Math.random() * 4) + 1;
+	randomLegShape = Math.floor(Math.random() * 4) + 1;
+	randomAnimations = Math.floor(Math.random() * 5) + 1;
+	
+	var randomDNA = {
+    "headcolor" : 10,
+    "mouthColor" : 13,
+    "eyeColor" : 33,
+    "earColor" : 10,
+    //Cattributes
+    "eyePosition" : 1,
+    "earShape" : 1,
+    "legShape" : 1,
+    "decorationSidescolor" : 13,
+    "animation" :  1,
+    "lastNum" :  1
+    }
+	
+	randomDNA.headcolor = randomHeadColor;
+	randomDNA.mouthColor = randomMouthColor;
+	randomDNA.eyeColor = randomEyeColor;
+	randomDNA.earColor = randomEarColor;
+	randomDNA.eyePosition = randomEyePosition;
+	randomDNA.earShape = randomEarShape;
+	randomDNA.legShape = randomLegShape;
+	randomDNA.animation = randomAnimations;
+	
+	renderCat(randomDNA);
+})
+
+$("#getDefault").click(()=>{
+	  renderCat(defaultDNA);
 })
